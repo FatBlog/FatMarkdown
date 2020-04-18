@@ -1,7 +1,31 @@
 import { TransformEnvironment } from "./TransformEnvironment";
 
-export const transformText = (source: string, env?: TransformEnvironment): string => {
-    return "";
+export const transformText = async (source: string, env?: TransformEnvironment): string => {
+
+    let stream = new ReadableStream({
+        start(controller) {
+            controller.enqueue(source);
+        }
+    });
+
+    const transformer = createTranfsormer(env);
+
+    stream = stream.pipeThrough(transformer);
+
+    const reader = stream.getReader.getReader();
+
+    let readObj = await reader.read();
+
+    let outputBuffer = '';
+
+    while (!readObj.done) {
+
+        outputBuffer += readObj.value;
+
+        readObj = await reader.read();
+    }
+
+    return outputBuffer;
 };
 
 export type PipeTransformer = {

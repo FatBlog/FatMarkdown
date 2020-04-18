@@ -1,13 +1,13 @@
 import { TransformEnvironment } from "../TransformEnvironment";
 import { RenderContext } from "../compiler/RenderContext";
 
-export interface ComponentContext {
+export interface ComponentContext<T = Record<string, any>> {
 
     environment: TransformEnvironment;
 
     renderContext: RenderContext;
 
-    data: Record<string, any>;
+    data: T;
 
     ex?: any;
 

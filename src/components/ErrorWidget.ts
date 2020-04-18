@@ -2,6 +2,13 @@ import { IComponent } from "./IComponent";
 import { ComponentContext } from "./ComponentContext";
 
 
+export interface ErrorWidgetParams {
+
+    componentName: string;
+
+}
+
+
 export class ErrorWidget implements IComponent {
 
     name(): string {
@@ -12,7 +19,9 @@ export class ErrorWidget implements IComponent {
         
         const {renderContext} = context;
 
-        const errorMessage = '';
+        const {componentName} = context.data;
+
+        const errorMessage = `An error occured when trying to render ${componentName || 'Component'}`;
 
         renderContext.writeCss(`
 .ErrorWidget {

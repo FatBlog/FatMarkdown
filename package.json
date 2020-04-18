@@ -1,42 +1,49 @@
 {
-    "name": "fatmarkdown",
-    "version": "0.0.1",
-    "description": "An extensible, component-based markdown compiler written in TypeScript.",
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
-    "dependencies": {},
-    "devDependencies": {
-        "prettier": "^2.0.4",
-        "tslint": "^6.1.1",
-        "tslint-config-prettier": "^1.18.0",
-        "typescript": "^3.8.3"
-    },
-    "scripts": {
-        "test": "jest --config jestconfig.json",
-        "build": "tsc",
-        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-        "lint": "tslint -p tsconfig.json",
-        "prepare": "npm run build",
-        "prepublishOnly": "npm test && npm run lint",
-        "preversion": "npm run lint",
-        "version": "npm run format && git add -A src",
-        "postversion": "git push && git push --tags"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/FatBlog/FatMarkdown.git"
-    },
-    "keywords": [
-        "Markdown",
-        "Advanced Markdown",
-        "Component",
-        "Fat Client",
-        "Fat"
-    ],
-    "author": "Ali Mousavi Kherad <alimousavikherad@gmail.com> (http://amkherad.ir)",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/FatBlog/FatMarkdown/issues"
-    },
-    "homepage": "https://github.com/FatBlog/FatMarkdown#readme"
+  "name": "fatmarkdown",
+  "version": "0.0.1",
+  "description": "An extensible, component-based markdown compiler written in TypeScript.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "dependencies": {
+    "ts-node": "^8.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.0",
+    "jest": "^25.3.0",
+    "prettier": "^2.0.4",
+    "tslint": "^6.1.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3",
+    "@types/jest": "^25.2.1",
+    "ts-jest": "^25.4.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "dev": "tsc && ",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FatBlog/FatMarkdown.git"
+  },
+  "keywords": [
+    "Markdown",
+    "Advanced Markdown",
+    "Component",
+    "Fat Client",
+    "Fat"
+  ],
+  "author": "Ali Mousavi Kherad <alimousavikherad@gmail.com> (http://amkherad.ir)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FatBlog/FatMarkdown/issues"
+  },
+  "homepage": "https://github.com/FatBlog/FatMarkdown#readme"
 }
